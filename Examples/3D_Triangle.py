@@ -26,8 +26,8 @@ def main():
 		x3 = round(r * math.cos(t+((8/3)*math.pi))) + int(window.width/2)
 		y3 = round(r * math.sin(t+((5/3)*math.pi))) + int(window.height/2)
 
-		x4 = round(r * math.cos(t+((12/3)*math.pi))) + int(window.width/2)
-		y4 = round(r * math.sin(t+((9/3)*math.pi))) + int(window.height/2)
+		x4 = round(r * math.cos(t+((25/3)*math.pi))) + int(window.width/2)
+		y4 = round(r * math.sin(t+((10/3)*math.pi))) + int(window.height/2)
 
 		rascii.color = '*'
 		rascii.triangle(window, x1, y1, x2, y2, x3, y3, True)
