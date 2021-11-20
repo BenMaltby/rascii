@@ -31,7 +31,7 @@ def main():
 
 		rascii.color = '*'
 		rascii.triangle(window, x1, y1, x2, y2, x3, y3, True)
-		rascii.triangle(window, x1, y1, x3, y3, x4, y4)
+		rascii.triangle(window, x1, y1, x3, y3, x4, y4, True)
 		rascii.triangle(window, x3, y3, x2, y2, x4, y4, True)
 
 		t += 0.04
