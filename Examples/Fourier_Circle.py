@@ -12,12 +12,11 @@ def main():
 
 	t = 0
 	wave = []
-	rascii.color = '*'
 
 	amount = 10  # change for a different wave
-	
-	while True:
 
+	while True:
+		rascii.color = '*'
 		window.clear()  # erase screen data
 		rascii.translateVector = [int(window.width*0.25), int(window.height*0.5)]
 
@@ -29,18 +28,22 @@ def main():
 			prevy = round(y)
 
 			n = i*2+1
-			radius = (int(window.width*0.125) * (4 / (n*math.pi)))
+			radius = (int(window.width*0.1) * (4 / (n*math.pi)))
 			x += round(radius * math.cos(n*t))
 			y += round(radius * math.sin(n*t))
 
-			rascii.fill = False
+			rascii.fill = True
+			rascii.fill_color = '.'
 			rascii.circle(window, prevx, prevy, round(radius))
 
 			rascii.line(window, prevx, prevy, x, y)
 
 		wave.insert(0, y)
-
+	
 		rascii.translateVector = [int(window.width*(1/2)), int(window.height*0.5)]
+		rascii.color = '-'
+		rascii.line(window, x-int(window.width*0.25), y, 0, wave[0])
+		rascii.color = '@'
 
 		data = []
 		for j in range(len(wave)-1):
