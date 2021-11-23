@@ -15,6 +15,9 @@ Tutorial:
 Features:
 -----------
 • Can draw: circles, lines, rectangles, triangles, points, user defined shapes
+
 • Has a translation vector for coordinates
+
 • Handles creation and use of window
+
 • togglable window border
