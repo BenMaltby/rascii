@@ -22,4 +22,7 @@ Tutorial:
 
 • Copy from the boilerplate.py file to get the base working code
 
+Examples:
+-----------
+
 ![fourier_circle](https://user-images.githubusercontent.com/91958897/143144814-d58cc662-75b7-4600-aafe-c660410a88d2.png)
