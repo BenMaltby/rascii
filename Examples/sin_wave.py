@@ -14,17 +14,16 @@ def main():
 	y = 0
 	r = 15
 	t = 0
-	ytran = 30
+	rascii.translateVector = [0, int(window.height/2)]
 
 	while True:
 
 		window.clear()  # erase screen data
-		rascii.clear_console()  # clear actual console
 
-		y = round(r * math.sin(t)) + ytran
+		y = round(r * math.sin(t))
 		points.insert(0, y)
 
-		for i in range(0, len(points)-1, 1 if len(points) > 1 else 1):
+		for i in range(0, len(points)-1):
 			if len(points) > 1:
 				rascii.line(window, i+9, points[i], (i+1)+9, points[i+1])
 			else:
