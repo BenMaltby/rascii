@@ -11,7 +11,6 @@ def main():
 	while True:
 
 		window.clear()  # erase screen data
-		rascii.clear_console()  # clear actual console
 
 		#code goes here...
 		#{
@@ -42,6 +41,9 @@ Fill:
 	rascii.fill = True/False
 	rascii.fill_color = '{character}'
 
+Translate:
+	rascii.translateVector = [xtranslation, ytranslation]
+
 Point:
 	rascii.point(window, x, y)
 
@@ -56,4 +58,7 @@ Rectangle:
 
 Triangle:
 	rascii.triangle(window, x1, y1, x2, y2, x3, y3, Transparen=False/True)
+
+Shape:
+	rascii.shape(window, point_data, connected=True/False)
 """
