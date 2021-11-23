@@ -62,9 +62,7 @@ class new_window:
 		self.border = False
 
 	def __repr__(self):
-		"""
-		Just for testing purposes
-		"""
+		# Just for testing purposes
 		return f'bg_color:({self.bg_color}), width:{self.width}, height:{self.height}'
 
 	def setup(self):
@@ -101,7 +99,7 @@ class new_window:
 				screen_buffer += f'{i} '  # char + 'space'
 			elif i == '~/':
 				screen_buffer += '\n'
-		clear_console()
+		clear_console()  # Trying to find a way to overwrite data rather than clear.
 		print(screen_buffer)
 
 	def clear(self):
