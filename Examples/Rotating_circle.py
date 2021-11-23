@@ -17,13 +17,12 @@ def main():
 	while True:
 
 		window.clear()  # erase screen data
-		rascii.clear_console()  # clear actual console
 
 		x = round(radius * math.cos(theta)) + int(window.width/2)
 		y = round(radius * math.sin(theta)) + int(window.height/2)
 
 		rascii.color = '@'
-		rascii.fill, rascii.fill_color = True, window.bg_color
+		rascii.fill = False
 		rascii.circle(window, x, y, 5)
 
 		theta += 0.1
@@ -34,8 +33,9 @@ def main():
 if __name__ == '__main__':
 	main()
 
+# Must run in command prompt
+# No Ending yet so use "ctrl + c" to stop
 # Delete the guide if you don't need it ⬇️
-
 
 
 ###############
@@ -48,6 +48,9 @@ Color:
 Fill:
 	rascii.fill = True/False
 	rascii.fill_color = '{character}'
+
+Translate:
+	rascii.translateVector = [xtranslation, ytranslation]
 
 Point:
 	rascii.point(window, x, y)
@@ -63,4 +66,7 @@ Rectangle:
 
 Triangle:
 	rascii.triangle(window, x1, y1, x2, y2, x3, y3, Transparen=False/True)
+
+Shape:
+	rascii.shape(window, point_data, connected=True/False)
 """
