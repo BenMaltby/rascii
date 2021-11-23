@@ -162,7 +162,7 @@ def line(screen, x1, y1, x2, y2):
 	c = y1 - (m * x1)  # y-intercept calculation
 	lor, upr = -(m/2) if m > 0 else m/2, m/2 if m > 0 else -(m/2)  # buffer calculation
 
-	if m < 1 and m > 0: lor, upr = -(1/2), 1/2  # small gradient buffer
+	if m < 1 and m >= 0: lor, upr = -(1/2), 1/2  # small gradient buffer
 
 	# these lines are used for calculating where to iterate over the screen, instead of iterating over the whole screen.
 	left_point   = x1 if x1 <= x2 else x2
