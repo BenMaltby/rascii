@@ -12,9 +12,10 @@ def main():
 
 	t = 0
 	wave = []
-	amount = 10
 	rascii.color = '*'
 
+	amount = 10  # change for a different wave
+	
 	while True:
 
 		window.clear()  # erase screen data
