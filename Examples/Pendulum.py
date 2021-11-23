@@ -16,7 +16,7 @@ def main():
 	angleA = 0
 	bx, by = 0, 0
 	length = 40
-	gravity = 0.05
+	gravity = 0.3
 	xtranslate = int(window.width/2)
 	ytranslate = int(window.height/12)
 
@@ -33,11 +33,12 @@ def main():
 		bx = round(length * math.sin(angle) + xtranslate)
 		by = round(length * math.cos(angle) + ytranslate)
 
-		rascii.color = '*'
+		rascii.color = '|'
 		rascii.line(window, xtranslate, ytranslate, bx, by)
 
-		rascii.color = '.'
-		rascii.fill, rascii.fill_color = True, window.bg_color
+		rascii.color = '#'
+		rascii.fill = True
+		rascii.fill_color = '.'
 		rascii.circle(window, bx, by, 6)
 
 		window.draw()  # draw contents of screen data
