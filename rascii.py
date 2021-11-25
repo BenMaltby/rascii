@@ -38,6 +38,15 @@ def idx_to_cartesian(width, idx):
 	return x, int(y)
 
 
+def color_value(value: int):
+	"""
+	Maps the 255 rgb values to 70 alpha pre-specified characters to give illusion of light-level.
+	"""
+	global color
+	if value < 0 or value > 255: error("Color Value must be between 0 and 255")
+	color_range = ' .`^",:;Il!i><~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8@$█'
+	color = color_range[math.floor(((len(color_range)-1)/255) * value)]
+
 ##################
 # Error Function #
 ##################
@@ -62,7 +71,9 @@ class new_window:
 		self.border = False
 
 	def __repr__(self):
-		# Just for testing purposes
+		"""
+		Just for testing purposes
+		"""
 		return f'bg_color:({self.bg_color}), width:{self.width}, height:{self.height}'
 
 	def setup(self):
@@ -70,10 +81,7 @@ class new_window:
 		Will create the screen_data array based on a given width and height
 		"""
 		if not self.border:  # if not drawing the border
-			for row in range(self.height):
-				for col in range(self.width):
-					self.screen_data.append(self.bg_color)
-				self.screen_data.append('~/')
+			self.screen_data = ['~/' if i % (self.width+1) == 0 else self.bg_color for i in range((self.width*self.height)+self.height)]
 
 		elif self.border:  # if drawing a border
 			for row in range(self.height):
@@ -99,7 +107,7 @@ class new_window:
 				screen_buffer += f'{i} '  # char + 'space'
 			elif i == '~/':
 				screen_buffer += '\n'
-		clear_console()  # Trying to find a way to overwrite data rather than clear.
+		clear_console()
 		print(screen_buffer)
 
 	def clear(self):
@@ -109,12 +117,9 @@ class new_window:
 		self.screen_data.clear()
 
 		if not self.border:
-			for row in range(self.height):
-				for col in range(self.width):
-					self.screen_data.append(self.bg_color)
-				self.screen_data.append('~/')
+			self.screen_data = ['~/' if i % (self.width+1) == 0 else self.bg_color for i in range((self.width*self.height)+self.height)]
 
-		elif self.border:
+		if self.border:
 			for row in range(self.height):
 				for col in range(self.width):
 
