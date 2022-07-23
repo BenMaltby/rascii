@@ -1,5 +1,5 @@
 # rascii
-Experimental 2D Ascii Renderer in Python
+Experimental 2D Ascii Renderer in Python for windows (not sure about macos or linux)
 
 Just for Fun 👍
 
